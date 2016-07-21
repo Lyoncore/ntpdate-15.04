@@ -1,0 +1,10 @@
+#!/bin/bash
+set -x
+
+$SNAP_APP_PATH/ntpdate 0.debian.pool.ntp.org
+
+while [ $? -ne 0 ]
+do
+	sleep 10
+	$SNAP_APP_PATH/ntpdate 0.debian.pool.ntp.org
+done

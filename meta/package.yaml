@@ -1,0 +1,14 @@
+name: ntpdate
+version: 1.0
+vendor: Canonical Commercial Engineering <commercial-engineering@canonical.com>
+summary: simple ntpdate bootup service
+description: |
+ This is a simple ntpdate service sync on bootup
+icon:
+binaries:
+ - name: ntpdate
+   security-template: unconfined
+services:
+ - name: ntpdate-bootsync
+   start: ntpdate-bootsync
+   security-template: unconfined
